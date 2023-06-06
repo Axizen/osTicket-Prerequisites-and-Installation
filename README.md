@@ -15,19 +15,19 @@ Windows 10 (21H2)
 
  **** Setting up a Virtual Machine (VM) in Microsoft Azure, and setting it to run Windows 10. ****
 We will not be covering this as it's a simple process to execute.  However, what will be pointed out is that when creating the VM, we need it to have more than 1 vCPU.  For this tutorial, I have chosen East US for region and Standard_E2s_v3 - 2 vCPUs, and we must allow it to create a new Virtual Network (Vnet).
-<img src=https://i.imgur.com/ZF809zc.png>
+<img src=https://i.postimg.cc/cJmtbcxd/VMsetup.png>
 
 Now that we have our VM up and running, we must access it through a remote desktop application.  I'm running linux so I had to download one, but that's irrelevant because we will be doing this process in the VM we created.  In this case, mine is named CCAZF-SERVER 
-<img src=https://i.imgur.com/aHaHrX9.png>
+<img src=https://i.postimg.cc/nz2KqJjY/VMDesktop.png>
   
   **** Prerequisites for installing OSTicket on any host machine ****
 A lot of what we will be using for this process can be found here https://drive.google.com/drive/u/1/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6
 keep that tab open, we will be coming back to this. 
-<img src=https://i.imgur.com/7aPixaC.png>
-<img src=https://i.imgur.com/Hstt3Pc.png>
+<img src=https://i.postimg.cc/KcQQMntS/VMInstallation-Files.png>
+<img src=https://i.postimg.cc/Znq8cM6k/VMISSTurn-On-Feature.png>
 
 1}  First, we must enable IIS in Windows along with CGI.  To do this, we go to Start>Settings>Apps>Optional Features>More Windows Features>Internet Information Services>World Wide Web Services>Application Development Features>CGI.  BE SURE TO TICK THE BOXES BEFORE OPENING THE FOLDERS.  If your screen looks like mine you're on the right track.
-<img src=https://i.imgur.com/jjSPuvZ.png>
+<img src=https://i.postimg.cc/Y2yY7819/VMPHPManager.png>
 
 2}  Now, let's go back and download "PHPManagerForIIS_V1.5.0.msi".  Go ahead and install it.  If it fails, that means you skipped my first step.  For shame, slow it down!
 <img src=https://i.imgur.com/RPRqgqQ.png>
