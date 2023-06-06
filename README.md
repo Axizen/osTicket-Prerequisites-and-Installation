@@ -30,89 +30,89 @@ keep that tab open, we will be coming back to this.
 <img src=https://i.postimg.cc/Y2yY7819/VMPHPManager.png>
 
 2}  Now, let's go back and download "PHPManagerForIIS_V1.5.0.msi".  Go ahead and install it.  If it fails, that means you skipped my first step.  For shame, slow it down!
-<img src=https://i.imgur.com/RPRqgqQ.png>
+<img src=https://i.postimg.cc/yNqTHnC9/VMISSrewrite.png> 
 
 3}  Thirdly, we download and install "rewrite_amd64-en-US.msi"
 
 4}  Fouth Step, we create our own directory.  "C:\PHP".
-<img src=https://i.imgur.com/uqifqK3.png>
+<img src=https://i.postimg.cc/VvTCFLYM/VMPHPFolder.png>
 Then we go and download "php-7.3.8-nts-Win32-VC15-x86.zip" from our installation files tab.  You will have to manually tell edge to "keep" the file in order for it to actually download.  Extract it to our new "PHP" folder. 
-<img src=https://i.imgur.com/IHsZ264.png>
+<img src=https://i.postimg.cc/tJ76PVHp/VMPHPExtract.png>
 
 5}  Now we will download and install "VC_redist.x86.exe"
-<img src=https://i.imgur.com/u1SHb7I.png>
+<img src=https://i.postimg.cc/hjZzSPQw/VMVCREdis.png>
 
 6}  Step 6, we install "mysql-5.5.62-win32.msi".  We will go ahead and launch the Configuration Wizard once this installation completes. 
-<img src=https://i.imgur.com/ww5gYYw.png>
+<img src=https://i.postimg.cc/RhbcbLTW/VMMySQL.png>
 
 We want to select "Standard Configuration".  Go ahead and make up a password.  Let's go with "Password1" [INSERT PHOTO]
-<img src=https://i.imgur.com/DkdIRcB.png>
+<img src=https://i.postimg.cc/qBmXRpdp/VMMYSQLSetup.png>
 
 7}  Search for "IIS" from the "Start" menu.  Right click>Run as administrator.  Double click "PHP Manager" once we get it going.  Click "Register new PHP version", as the program is telling us that's what we need.  Browse your way to "php-cgi"
-<img src=https://i.imgur.com/t8q9tUf.png>
+<img src=https://i.postimg.cc/ZRw3Cx2w/VMPHPEnable.png>
 
 click [OK], and then it should look like this
-<img src=https://i.imgur.com/ihyLe14.png>
+<img src=https://i.postimg.cc/5t1FgrMP/VMServer-Home.png>
 
 Click on our server name from under the "Connections" list, and then on the right side of the window you can restart the server.  Do it. 
-<img src=https://i.imgur.com/GjWM2F8.png>
+<img src=https://i.postimg.cc/1t3VhNXw/VMServer-Restart.png>
 
 8}  Now we can finally install osTicket.  Download the .zip file "osTicket-v1.15.8.zip" and extract it, then put the "upload" folder into c\inetpub\wwwroot.
-<img src=https://i.imgur.com/hiBh8QT.png>
+<img src=https://i.postimg.cc/yYtmmnd5/VMos-Ticket.png>
 
 Rename "upload" to "osTicket".
-<img src=https://i.imgur.com/2Yuu7bo.png>
+<img src=https://i.postimg.cc/q7X2dTLV/VMos-Ticket-Extract.png>
 
 Reload IIS again. On the left side of the window, navigate to Sites>Default Web Site>osTicket and click on the right side of the window where it says "Browse *:80 (http)"
-<img src=https://i.imgur.com/auxINvY.png>
+<img src=https://i.postimg.cc/CKVbt1bs/VMos-Ticket-Browse80.png>
 
 It should open us up to a "Thank You" tab.
-<img src=https://i.imgur.com/SShr7Q5.png>
+<img src=https://i.postimg.cc/76H0HWsC/VMos-Ticket-Installer.png>
 
 9}  We're going to fill in the "X"s.  Go back into IIS, and from where we left it, we can run the "PHP Manager".
-<img src=https://i.imgur.com/7pD7m43.png>
+<img src=https://i.postimg.cc/GhWD82gn/VMPHPManager-Extensions.png>
 
 We have to change some options under "Enable or disable an extension".  Click that.  Right click and "enable" the three following dlls:  "php_imap.dll", "php_intl.dll", and "php_opcache.dll".  Go ahead and refresh osTicket in your browser.  Youll see more checks now.
-<img src=https://i.imgur.com/ZO9HEzZ.png>
+<img src=https://i.postimg.cc/KvkL8LN5/VMPHPManager-Extensions-Installed.png>
 
 Browse your way to "C:\inetpub\wwwroot\osTicket\include" and rename ost-sampleconfig.php
-<img src=https://i.imgur.com/pQtxr9U.png>
+<img src=https://i.postimg.cc/0ySpcmKN/VMos-Sample-Config.png>
 
 to ost-config.php
-<img src=https://i.imgur.com/qHkY1nH.png>
+<img src=https://i.postimg.cc/jdL6nBsP/VMos-Config.png>
 
 From there, Right click>properties
-<img src=https://i.imgur.com/LXHJldv.png>
+<img src=https://i.postimg.cc/L8j1zpGY/VMRemove-Permissions.png>
 
 Then click [Security]>[Advanced]  [Disable inhertance], [Remove all inherited permissions from this object.]
-<img src=https://i.imgur.com/nqeVxT0.png>
+<img src=https://i.postimg.cc/L8j1zpGY/VMRemove-Permissions.png>
 
 Then we [add]>"Select a Principal", and type "everyone" in the open type field, click [Check names], then [OK]
-<img src=https://i.imgur.com/6Ke09Mq.png>
+<img src=https://i.postimg.cc/Hsxz4VtJ/VMBasic-Installation-Help-Desk.png>
 
 Check the "Full Control" box, then [OK],  then [Apply], then [OK]. then [OK] again.
 
 10} Now we can finally hit [Continue] on the osTicket screen in our browser.  Fill the fields out to your needs, in my case I'm setting up a help desk so the email address is the only thing that has to be real, but you must not forget the info you put in. 
-<img src=https://i.imgur.com/TBXZ6NB.png>
+<img src=https://i.postimg.cc/d1wm711V/VMHeidi-SQL.png>
 
 11} Now we will download and install "HeidiSQL" by opening the link from the "installation files" tab and follow along until we get a running .exe.  Go ahead and install the program as you would anything else.
-<img src=https://i.imgur.com/5XwGVNg.png>
+<img src=https://i.postimg.cc/X7z8242s/VMDatabase-Settings.png>
 
 Run it, click [New] as soon as you see it.  User "root", Password "Password1", then click [Open].
-<img src=https://i.imgur.com/sv36zOp.png>
+<img src=https://i.postimg.cc/ZnYcQRtM/os-TRicket-Installer-Complete.png>
 
 Now we go back to the osTicket window and fill in the same name and password on the screen we left it on.  Now in HeidiSQL we right click "Unnamed" and then "Create new>Database".  For Name I'm putting in osTicket, then [OK].
 
-12} Now that we have a database made for osTicket we can enter it's name in the only empty field we left in the browser. <img src=https://i.imgur.com/4641V5Y.png>.
+12} Now that we have a database made for osTicket we can enter it's name in the only empty field we left in the browser. <img src=  >.
 
 Install it.  You'll be greeted with a "Congratulations" screen if all was done correctly.
-<img src=https://i.imgur.com/cPE8tJ7.png>
+<img src=https://i.postimg.cc/KjKK4SnY/VMSetup-Delete.png>
 
 13} For cleanup purposes we're going to navigate to C:\inetpub\wwwroot\osTicket and delete the "Setup" folder 
-<img src=https://i.imgur.com/cpUMkFo.png>
+<img src=https://i.postimg.cc/P5vM999T/VMAudit-Everyone.png>
 
 Now we go to C:\inetpub\wwwroot\osTicket\include and seek out the "ost-config.php". open up "properties" as we're going to change it's permissions back.  Go to "Security>advanced" again, "Audit", type "Everyone" Again, then set it to read and read & execute.  [Apply] and [OK].
 
 You should now be able to login to osTicket as an admin.  A lengthy process, but this is something typically used for businesses with networks as well as other complexities, as opposed to something you would need to be setting up at home.
 
-Now that we've done all that, it's time for [osTicket: Post-Installation Configuration(WIP)](https://github.com/PACNOLOGY/osTicket---Post-Install-Configuration).  See you there!
+Now that we've done all that, it's time for [osTicket: Post-Installation Configuration(WIP)](https://github.com/Axizen/osTicket-Post-Installation-Configuration). See you there!
